@@ -26,6 +26,18 @@ Enemy.prototype.update = function(dt) {
     this.dt = dt;
     this.x = this.x + 1;
 
+    // if the x is greater than the screen width, reset back to 0
+    if ( this.x > 500 ) {
+      this.x = -150;
+    }
+
+    // console.log('testing coordinates ' + this.x + " and " + this.y);
+
+    //if enemy and player position are the same, then reset player
+    if (this.x === player.x && this.y === player.y) {
+      console.log('true');
+      player.resetGame();
+    }
     // console.log('Enemy x position ' + this.x);
     // console.log('Enemy y position: ' + this.y);
     // You should multiply any movement by the dt parameter
@@ -50,12 +62,15 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-Enemy.prototype.checkCollisions = function() {
+function checkCollisions() {
   //if enemies and player collide then reset game
   //if position of enemy and player is same then collision = true;
-  // console.log('enemy location: ' + enemy.x);
-  // console.log('player location: ');
+  console.log('enemy location: ' + Enemy.x);
+  console.log('player location: ');
 };
+
+checkCollisions();
+
 
 // Now write your own player class
 // This class requires an update(), render() and
@@ -84,12 +99,12 @@ Player.prototype.resetGame = function() {
 function playerWin() {
   // console.log('game reset');
 
-  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-  ctx.fillStyle = "black";
-	ctx.fillRect(0, 0, 505, 600);
-  ctx.font = "48px sans-serif";
-  ctx.fillStyle = "white";
-	ctx.fillText("You won!", 0, 40);
+  // ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+  // ctx.fillStyle = "black";
+	// ctx.fillRect(0, 0, 505, 600);
+  // ctx.font = "48px sans-serif";
+  // ctx.fillStyle = "white";
+	// ctx.fillText("You won!", 0, 40);
   //return player back to start position
   player.resetGame();
 
@@ -174,7 +189,6 @@ var enemy3 = new Enemy(-100, 100);
 
 // Place all enemy objects in an array called allEnemies
 allEnemies = [enemy, enemy2, enemy3];
-//enemy.checkCollisions();
 
 // Place the player object in a variable called player
 var player = new Player(5);
