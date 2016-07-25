@@ -34,8 +34,11 @@ Enemy.prototype.update = function(dt) {
     // console.log('testing coordinates ' + this.x + " and " + this.y);
 
     //if enemy and player position are the same, then reset player
-    if (this.x === player.x && this.y === player.y) {
-      console.log('true');
+    console.log('player y location ' + player.y);
+    // console.log('enemy y location ' + this.y);
+    if ( this.x === player.x && this.y === player.y) {
+      console.log('hit x!');
+      console.log('hit y!');
       player.resetGame();
     }
     // console.log('Enemy x position ' + this.x);
@@ -46,6 +49,7 @@ Enemy.prototype.update = function(dt) {
     // this.x = this.x * this.dt;
 
 
+
     // which will ensure the game runs at the same speed for
     // all computers.
 };
@@ -54,15 +58,6 @@ Enemy.prototype.update = function(dt) {
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
-
-function checkCollisions() {
-  //if enemies and player collide then reset game
-  //if position of enemy and player is same then collision = true;
-  console.log('enemy location: ' + Enemy.x);
-  console.log('player location: ');
-};
-
-checkCollisions();
 
 
 // Now write your own player class
@@ -86,7 +81,7 @@ var Player = function() {
 Player.prototype.resetGame = function() {
   this.x = startingPlayerLocationX;
   this.y = startingPlayerLocationY;
-  console.log('won ' + this.x + ' ' + this.y);
+  // console.log('won ' + this.x + ' ' + this.y);
 };
 
 function playerWin() {
@@ -176,9 +171,9 @@ Player.prototype.handleInput = function(key) {
 
 
 // Now instantiate your objects.
-var enemy = new Enemy(1, 1);
-var enemy2 = new Enemy(-200, 300);
-var enemy3 = new Enemy(-100, 100);
+var enemy = new Enemy(1, 25);
+var enemy2 = new Enemy(-200, 325);
+var enemy3 = new Enemy(-100, 125);
 
 // Place all enemy objects in an array called allEnemies
 allEnemies = [enemy, enemy2, enemy3];
