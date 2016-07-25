@@ -46,13 +46,6 @@ Enemy.prototype.update = function(dt) {
     // this.x = this.x * this.dt;
 
 
-
-    //some loop that moves the bug
-    // for (i=0; i<=505; i++) {
-    //   // this.x = this.x * this.dt;
-    //   // this.x = this.x + 100;
-    //   console.log(this.x);
-    // }
     // which will ensure the game runs at the same speed for
     // all computers.
 };
