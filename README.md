@@ -1,6 +1,10 @@
-frontend-nanodegree-arcade-game
-===============================
+# Classic Arcade Game Clone
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission.
+## About
+This is a classic arcade game where you must get the player to the water without hitting a bug. It is one of the projects for Udacity's Front-End Web Developer Nanodegree
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+## Installation
+Make sure you have downloaded all files and folders to run the game. To play the game, open up index.html in a browser.
+
+## How to Play
+Use your up, down, left, and right keys to move your player. If you hit a bug, the game will be reset. When you reach the water successfully, the game will also be reset.
